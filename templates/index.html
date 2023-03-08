@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	
+ <!-- ***********Graph for 2023 ***********-->
+	<script type="text/javascript">
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				['Year', '2023',],
+				['January',  '{{ m1 }}',],
+				['February', '{{ m2 }}',],
+				['March', '{{ m3 }}',],
+			]);
+			var options = {
+				chart: {
+					title: 'Monthly Gain (Change)',
+				}
+			};
+
+			var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+			chart.draw(data, google.charts.Bar.convertOptions(options));
+		}
+	</script>
+
+ <!-- ***********Graph for 2022 ***********-->
+	<script type="text/javascript">
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				['Year', '2022',],
+				['January','{{ m12 }}',],
+				['February','{{ m22 }}',],
+				['March', '{{ m32 }}',],
+				['April','{{ m42 }}',],
+				['May', '{{ m52 }}',],
+				['June', '{{ m62 }}',],
+				['July', '{{ m72 }}',],
+				['August', '{{ m82 }}',],
+				['September', '{{ m92 }}',],
+				['October', '{{ m102 }}',],
+				['November', '{{ m122 }}',],
+				['December', '{{ m132 }}',],
+			]);
+			var options = {
+				chart: {
+					title: 'Monthly Gain (Change)',
+				}
+			};
+
+			var chart = new google.charts.Bar(document.getElementById('columnchart_material-2'));
+
+			chart.draw(data, google.charts.Bar.convertOptions(options));
+		}
+	</script>
+
+ <!-- ***********Graph for 2021 ***********-->
+	<script type="text/javascript">
+		google.charts.load('current', { 'packages': ['bar'] });
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				['Year', '2021',],
+				['October', '{{ m103 }}',],
+				['November', '{{ m113 }}',],
+				['December', '{{ m123 }}',],
+			]);
+			var options = {
+				chart: {
+					title: 'Monthly Gain (Change)',
+				}
+			};
+
+			var chart = new google.charts.Bar(document.getElementById('columnchart_material-3'));
+
+			chart.draw(data, google.charts.Bar.convertOptions(options));
+		}
+	</script>
+	<title>Forex Results</title>
+</head>
+
+<body>
+	<h1>Forex Results</h1>
+	<p>Current Date/Time: {{ now }}</p>
+
+	<h2>Summary</h2>
+	<ul>
+		<li>Total gain: {{ gain }}/li>
+		<li>Absolute gain: {{ abs_gain }}</li>
+		<li>Daily Profit: {{ daily_profit }}</li>
+		<li>Monthly Profit: {{ monthly_profit }}</li>
+		<li>Drawdown: {{ drawdown }}</li>
+		<li>Equity: ({{ equity }})</li>
+		<li>Last Update: {{ last_update }}</li>
+	</ul>
+
+	<h2>Today</h2>
+	<ul>
+		<li>Gain: {{ today_gain }}</li>
+		<li>Gain Difference: ({{ today_gain_dif }})</li>
+		<li>Pips: {{ today_pips }}</li>
+		<li>Pips Difference: ({{ today_pips_dif }})</li>
+		<li>Win (difference): {{ today_win }}</li>
+		<li>Trades (Difference): {{ today_trades }}</li>
+	</ul>
+
+	<h2>This Week</h2>
+	<ul>
+		<li>Gain: {{ this_Week_gain }}</li>
+		<li>Gain Difference: {{ this_Week_gain_dif }}</li>
+		<li>Pips: {{ this_Week_pips }}</li>
+		<li>Pips Difference: {{ this_Week_pips_dif }}</li>
+		<li>Win (difference): {{ this_Week_win }}</li>
+		<li>Trades (Difference): {{ this_Week_trades }}</li>
+	</ul>
+
+	<h2>This Month</h2>
+	<ul>
+		<li>Gain: {{ this_Month_gain }}</li>
+		<li>Gain Difference: {{ this_Month_gain_dif }}</li>
+		<li>Pips: {{ his_Month_pips }}</li>
+		<li>Pips Difference: {{ this_Month_pips_dif }}</li>
+		<li>Win (difference): {{ this_Month_win }}</li>
+		<li>Trades (Difference): {{ this_Month_trades }}</li>
+	</ul>
+
+	<h2>This Year</h2>
+	<ul>
+		<li>Gain: {{ this_Year_gain }}</li>
+		<li>Gain Difference: {{ this_Year_gain_dif }}</li>
+		<li>Pips: {{ this_Year_pips }}</li>
+		<li>Pips Difference: {{ this_Year_pips_dif }}</li>
+		<li>Win (difference): {{ this_Year_win }}</li>
+		<li>Trades (Difference): {{ this_Year_trades }}</li>
+	</ul>
+
+	<h2>Advance Statistics</h2>
+	<ul>
+		<li>Trades: {{ Trades }}</li>
+		<li>Pips: {{ Pips }}</li>
+		<li>Average Win: {{ avg_win }} pips /</li>
+		<li>Average Loss: {{ avg_loss }} pips /</li>
+		<li>Longs Won: {{ longs_won }}</li>
+		<li>Shorts Won: {{ shorts_won }}</li>
+		<li>Best Trades: {{ best_trade }}</li>
+		<li>Worst Trades: ({{ worst_trades }}</li>
+		<li>Average Trade Length: {{ avg_trade_length }}</li>
+		<li>Profit Factor: {{ profit_factor }}</li>
+		<li>Sharpe Ratio: {{ sharpe_ratio }}</li>
+		<li>Z-Score: {{ Z_score}}</li>
+		<li>Expectance: {{ expectancy }} Pips /</li>
+		<li>AHPR: {{ ahpr }}</li>
+		<li>GHPR: {{ ghpr }}</li>
+	</ul>
+
+	<h2>Summary</h2>
+	<ul>
+		<li>Longs: Trades = {{ l_trades }} = {{ l_pips }}</li>
+		<li>Shorts: Trades = {{ s_trades }} = {{ s_pips }}</li>
+		<li>Total: Trades = {{ total_trades }} = {{ total_pips }} Won = {{ total_won }} Lost = {{ total_lost }}</li>
+	</ul>
+
+	<h2>********MONTHLY ANALYTICS Gain(Change)********</h2>
+
+	<div id="columnchart_material" style="width: 50%; min-width: 25%; height: 300px;"></div>
+	<div id="columnchart_material-2" style="width: 50%; min-width: 25%; height: 300px;"></div>
+
+	<div id="columnchart_material-3" style="width: 50%; min-width: 25%; height: 300px;"></div>
+
+	<!-- <h2>2023</h2>
+    <ul>
+      <li>January: {{ m1 }}</li>
+      <li>February: {{ m2 }}</li>
+      <li>March: {{ m3 }}</li>
+	</ul> -->
+
+	<!-- <h2>2022</h2>
+	<ul>
+		<li>January: {{ m12 }}</li>
+		<li>February: {{ m22 }}</li>
+		<li>March: {{ m32 }}</li>
+		<li>April: {{ m42 }}</li>
+		<li>May: {{ m52 }}</li>
+		<li>June: {{ m62 }}</li>
+		<li>July: {{ m72 }}</li>
+		<li>August: {{ m82 }}</li>
+		<li>September: {{ m92 }}</li>
+		<li>October: {{ m102 }}</li>
+		<li>November: {{ m112 }}</li>
+		<li>December: {{ m122 }}</li>
+	</ul>
+
+	<h2>2021</h2>
+	<ul>
+		<li>October: {{ m103 }}</li>
+		<li>November: {{ m113 }}</li>
+		<li>December: {{ m123 }}</li>
+	</ul> -->
+</body>
+
+</html>
